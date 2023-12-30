@@ -3,7 +3,7 @@ import cv2
 import math
 import cvzone
 # Load a model
-
+email_sent = False
 def sendmail(image):
     import smtplib
     from email.mime.multipart import MIMEMultipart
@@ -23,7 +23,7 @@ def sendmail(image):
     message = MIMEMultipart()
     message["From"] = sender_email
     message["To"] = receiver_email
-    message["Subject"] = "GUNNNNN_RUNNNN!!!"
+    message["Subject"] = "GUN_DETECTED!!!"
 
     # Email body
     body = "This is the body of the email."
@@ -55,9 +55,11 @@ def sendmail(image):
         server.send_message(message)
 
     print("Email with tensor image sent successfully!")
-# model = YOLO("yolov8m.yaml")  # build a new model from scratch
+    
+
+
 model = YOLO("best.pt")  # load a pretrained model (recommended for training)
-cap = cv2.VideoCapture(r"C:\Users\Ishaan\Downloads\air_gun.mp4")  # For Video
+cap = cv2.VideoCapture(r"air_gun.mp4")  # For Video
 classNames = ["gun", "gun"]
 while True:
     success, img = cap.read()
@@ -82,9 +84,10 @@ while True:
             if conf>0.2:
                 if currentClass =='gun':
                     myColor = (0, 0,255)
-                    sendmail(img)
-                    
-                    
+                    if email_sent == False:
+                        sendmail(img)
+                        email_sent = True
+
                 else:
                     myColor = (255, 0, 0)
 
