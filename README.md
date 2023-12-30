@@ -1,19 +1,16 @@
-# RJPOLICE_HACK_238_PIXASHIELD_3 
-Rajasthan Police Hackathon :- AI Intelligent Camera
+# RJPOLICE_HACK_238_PIXASHIELD_3
 
+Rajasthan Police Hackathon: AI Intelligent Camera
 
+<p align="center">
+  <img src="https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/af23ac60-9d81-4111-9a37-69a761d21191" alt="Image">
+</p>
 
+  Ultralytics YOLOv8 is a cutting-edge, state-of-the-art (SOTA) model that builds upon the success of previous YOLO versions and introduces new features and improvements to further boost performance and flexibility. YOLOv8 is designed to be fast, accurate, and easy to use, making it an excellent choice for a wide range of object detection and tracking, instance segmentation, image classification, and pose estimation tasks.
 
-https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/af23ac60-9d81-4111-9a37-69a761d21191
-
-![image](https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/79854bec-b420-4de2-9966-2b3519befe36)
-
-
-Ultralytics YOLOv8 is a cutting-edge, state-of-the-art (SOTA) model that builds upon the success of previous YOLO versions and introduces new features and improvements to further boost performance and flexibility. YOLOv8 is designed to be fast, accurate, and easy to use, making it an excellent choice for a wide range of object detection and tracking, instance segmentation, image classification and pose estimation tasks.
-
-![image](https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/ad70b751-5cfd-4f29-b8a1-28ed2a8ff683)
-
-![image](https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/b40a039f-c52e-43d7-bcb6-2f43940408b3)
+<p align="center">
+  <img src="https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/79854bec-b420-4de2-9966-2b3519befe36" alt="Image">
+</p>
 
 | Model   | Size (pixels) | mAPval | Speed CPU ONNX (ms) | Speed A100 TensorRT (ms) | Params (M) | FLOPs (B) |
 |---------|---------------|--------|---------------------|-------------------------|------------|-----------|
@@ -23,4 +20,6 @@ Ultralytics YOLOv8 is a cutting-edge, state-of-the-art (SOTA) model that builds 
 | YOLOv8l | 640           | 52.9   | 375.2               | 2.39                    | 43.7       | 165.2     |
 | YOLOv8x | 640           | 53.9   | 479.1               | 3.53                    | 68.2       | 257.8     |
 
-![image](https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/dc14c402-9969-4262-9b41-7a78d993e77b)
+<p align="center">
+  <img src="https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/dc14c402-9969-4262-9b41-7a78d993e77b" alt="Image">
+</p>
