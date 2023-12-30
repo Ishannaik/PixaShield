@@ -3,7 +3,9 @@
 Rajasthan Police Hackathon: AI Intelligent Camera
 
 <p align="center">
-  <img src="https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/af23ac60-9d81-4111-9a37-69a761d21191" alt="Image">
+  <video width="640" height="360" controls>
+    <source src="https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/af23ac60-9d81-4111-9a37-69a761d21191" type="video/mp4">
+  </video>
 </p>
 
   Ultralytics YOLOv8 is a cutting-edge, state-of-the-art (SOTA) model that builds upon the success of previous YOLO versions and introduces new features and improvements to further boost performance and flexibility. YOLOv8 is designed to be fast, accurate, and easy to use, making it an excellent choice for a wide range of object detection and tracking, instance segmentation, image classification, and pose estimation tasks.
