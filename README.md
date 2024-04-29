@@ -1,4 +1,4 @@
-# RJPOLICE_HACK_238_PIXASHIELD_3
+# PixaShield
 
 Rajasthan Police Hackathon: AI Intelligent Camera
 
