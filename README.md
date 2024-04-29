@@ -2,6 +2,14 @@
 
 Rajasthan Police Hackathon: AI Intelligent Camera
 
+- First Prize Winner
+
+Team: PixaShield
+- Ishan Naik
+- Ishaan Gupta
+- Kunal Pawar
+- Kartik Prajapati
+
 https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/af23ac60-9d81-4111-9a37-69a761d21191
 
 ![chrome_Kl39heYFIn](https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/b82e7a94-48c1-461a-ad95-d1f5bdeaaa7a)
