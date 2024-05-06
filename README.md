@@ -1,14 +1,45 @@
-# PixaShield
+# PixaShield: AI Intelligent Camera Solution
 
-Rajasthan Police Hackathon: AI Intelligent Camera
+## Introduction
 
-- First Prize Winner
+PixaShield, developed by the talented team from Thakur College of Engineering, emerged as the first prize winner in the Rajasthan Police Hackathon 1.0. Our solution addresses the problem statement of creating an AI-powered intelligent camera system. PixaShield integrates cutting-edge technology, extensive datasets, and innovative features to provide a robust surveillance solution.
 
-Team: PixaShield
+## Team Members
+
 - Ishan Naik
 - Ishaan Gupta
 - Kunal Pawar
 - Kartik Prajapati
+
+## Problem Statement
+
+The challenge presented was to develop an AI solution for an intelligent camera system. PixaShield not only meets this requirement but also exceeds expectations by incorporating advanced functionalities and features.
+
+## Features
+
+### Object Detection and Classification
+
+PixaShield utilizes Ultralytics YOLOv8, trained on two diverse datasets:
+
+1. **Infrared Dataset:**
+   - Classes: "person", "dog", "drone", "fire", "car"
+   - Number of Images: 10,000
+
+2. **Online Sourced Dataset:**
+   - Additional Classes: "Grenade", "Handgun", "Rifle", "Steel arms", "Climbing", "Fall", "Violence", "Fire"
+   - Number of Images: Over 125,000
+
+### Email Notifications
+
+Upon detecting an object of interest, PixaShield sends an email notification using its dedicated email ID.
+
+### Call Alerts via Twilio API
+
+PixaShield is equipped with Twilio API integration, enabling it to initiate a call alert when detecting specific objects.
+
+### Real-time Video Processing
+
+The system supports real-time video processing, enabling continuous monitoring and instant response to potential threats.
 
 https://github.com/Ishannaik/RJPOLICE_HACK_238_PIXASHIELD_3/assets/11766476/af23ac60-9d81-4111-9a37-69a761d21191
 
