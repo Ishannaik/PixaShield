@@ -23,14 +23,14 @@ from model_utils import get_yolo, color_picker_fn, get_system_stat
 
 st.set_page_config(
     page_title="PixaShield",  # the title of the webpage
-    page_icon="logo.png",  # the icon in the browser tab
+    page_icon="assets/google-icon.png",  # the icon in the browser tab
     # layout="centered",  # controlled the page layout
     # initial_sidebar_state="auto"  # initial state of the sidebar
 )
 
 # Add the login page to your Streamlit app
 def show_login_page():
-    logo_image = "logo.png"
+    logo_image = "assets/google-icon.png"
 
     # Create a layout with two columns for the logo and the title
     col1, col2 = st.columns([1, 4])
@@ -222,7 +222,7 @@ if (cap != None) and pred:
         get_system_stat(stframe1, stframe2, stframe3, fps, df_fq)
 
 # Show the login page when the app starts
-query_params = st.experimental_get_query_params()
+query_params = st.query_params()
 logged_in = query_params.get("logged_in")
 
 if logged_in:
