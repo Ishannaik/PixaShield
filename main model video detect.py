@@ -1,7 +1,15 @@
+import os
+import torch
 from ultralytics import YOLO
 import cv2
 import math
 import cvzone
+
+print(torch.cuda.is_available())  # Should return True if CUDA is properly installed
+print(torch.cuda.get_device_name(0))  # Should return the name of the GPU (e.g., NVIDIA GPU)
+
+# Ensure the dedicated GPU is used
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"  # Use "0" for the first dedicated GPU
 
 # Load a model
 email_sent = False
@@ -14,11 +22,10 @@ def sendmail(image):
     from email.mime.image import MIMEImage
     from email import encoders
     from PIL import Image
-    import numpy as np
     import io
 
     sender_email = "pixashield@gmail.com"
-    receiver_email = "ishannaik7@gmail.com"
+    receiver_email = "kunal4103@gmail.com"
 
     password = "bjxc lysq nizf qmle"
 
@@ -28,17 +35,14 @@ def sendmail(image):
     message["To"] = receiver_email
     message["Subject"] = "ANOMALY DETECTED!!!"
 
-    # Email body
-    body = "This is the body of the email."
-    message.attach(MIMEText(body, "plain"))
+    # Convert the image to RGB if it isn't already
+    if image.shape[-1] == 3:  # If image has 3 channels
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
-    # Convert tensor to image
-    tensor_data = image  # Replace with your tensor
-    image = Image.fromarray(tensor_data)
-
-    # Save image to a byte stream
+    # Convert image to PIL format and save to a byte stream
+    pil_img = Image.fromarray(image)
     image_byte_array = io.BytesIO()
-    image.save(image_byte_array, format="PNG")
+    pil_img.save(image_byte_array, format="PNG")
     image_byte_array.seek(0)
 
     # Attach image to the email
@@ -60,10 +64,12 @@ def sendmail(image):
     print("Email with tensor image sent successfully!")
 
 
-model = YOLO(
-    r"C:\Users\ishan\Desktop\RAJASTHAN\best (2).pt"
-)  # load a pretrained model (recommended for training)
-cap = cv2.VideoCapture(r"C:\Users\ishan\Desktop\RAJASTHAN\climbing.mp4")  # For Video
+# Load the model and ensure it uses GPU
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+model = YOLO(r"C:\Users\Kunal\Desktop\RJPOLICE_HACK_238_PIXASHIELD_3-main\gunkaro_Naik\best (2).pt").to(device)
+
+cap = cv2.VideoCapture(
+    r"C:\Users\Kunal\Desktop\RJPOLICE_HACK_238_PIXASHIELD_3-main\gunkaro_Naik\This is a Hand Grenade.mp4")  # For Video
 classNames = [
     "Grenade",
     "Handgun",
@@ -74,18 +80,29 @@ classNames = [
     "Violence",
     "Fire",
 ]
+
 while True:
     success, img = cap.read()
-    results = model(img, stream=True)
+    if not success:
+        break
+
+    # Convert the image to RGB (as OpenCV uses BGR by default)
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    # Resize the image to be divisible by 32
+    img_rgb = cv2.resize(img_rgb, (640, 640))
+
+    # Convert to tensor, add batch dimension, and move to GPU
+    img_tensor = torch.from_numpy(img_rgb).permute(2, 0, 1).unsqueeze(0).float().to(device)
+
+    results = model(img_tensor, stream=True)
     for r in results:
         boxes = r.boxes
         for box in boxes:
             # Bounding Box
             x1, y1, x2, y2 = box.xyxy[0]
             x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
-            # cv2.rectangle(img,(x1,y1),(x2,y2),(255,0,255),3)
             w, h = x2 - x1, y2 - y1
-            # cvzone.cornerRect(img, (x1, y1, w, h))
 
             # Confidence
             conf = math.ceil((box.conf[0] * 100)) / 100
@@ -100,9 +117,6 @@ while True:
                     if email_sent == False:
                         sendmail(img)
                         email_sent = True
-
-                # else:
-                #     myColor = (255, 0, 0)
 
                 cvzone.putTextRect(
                     img,
